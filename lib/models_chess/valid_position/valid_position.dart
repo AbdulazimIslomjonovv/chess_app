@@ -9,7 +9,7 @@ class ValidPosition {
     switch (string) {
       case 'piyoda':
         {
-          bl = yurishlar.piyoda();
+          bl = yurishlar.piyoda() || yurishlar.piyodaUraOladimi();
           break;
         }
       case 'malika':

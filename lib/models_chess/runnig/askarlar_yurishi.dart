@@ -96,6 +96,22 @@ class yurishlar {
     }
   }
 
+  static bool piyodaUraOladimi() {
+    if (queue) {
+      if ((x1 == x2 - 1 && y1 == y2 - 1 && oziOdamBormi()) || (x1 == x2 - 1 && y1 == y2 + 1 && oziOdamBormi())) {
+          return true;
+      } else {
+        return false;
+      }
+    } else {
+      if ((x1 == x2 + 1 && y1 == y2 + 1 && oziOdamBormi()) || (x1 == x2 + 1 && y1 == y2 - 1 && oziOdamBormi())) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
   static bool lakirovkaQilsaBoladimi() {
     bool bl = true;
     Map<String, int> mapAll = {...mapOq, ...mapQora};
@@ -205,4 +221,22 @@ bool odamJoqmi2() {
       return true;
     }
   }
+}
+
+bool oziOdamBormi() {
+  bool bl = false;
+  if (queue) {
+    mapQora.forEach((key, value) {
+      if (value.toString()[0] == x2.toString() && value.toString()[1] == y2.toString()) {
+        bl = true;
+      }
+    });
+  } else {
+    mapOq.forEach((key, value) {
+      if (value.toString()[0] == x2.toString() && value.toString()[1] == y2.toString()) {
+        bl = true;
+      }
+    });
+  }
+  return bl;
 }
