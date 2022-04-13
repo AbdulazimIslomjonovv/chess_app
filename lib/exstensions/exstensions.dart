@@ -5,11 +5,16 @@ import 'models_x_0_suniy_intellekt/DATA_BASE/mainn.dart';
 
 class Games {
   static void chess() {
-    while (mapOq.isNotEmpty && mapQora.isNotEmpty) {
+    while (mapOq.containsKey('shox1') && mapQora.containsKey('shox2')) {
       RunTable.run_table();
       queue = !queue;
       print(mapOq);
       print(mapQora);
+    }
+    if (mapOq.containsKey('shox1')) {
+      print('oq yutdi');
+    } else {
+      print('qora yutdi');
     }
   }
   static void x_0() {
