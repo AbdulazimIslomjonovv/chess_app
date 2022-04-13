@@ -2,6 +2,8 @@ import 'dart:io';
 
 import '../change_map/change_map.dart';
 import '../decoration.dart';
+import '../lakirovka/lakirovka.dart';
+import '../runnig/askarlar_yurishi.dart';
 import '../valid_position/valid_position.dart';
 import '../yeb_qoyish/yeb_qoyish.dart';
 import 'change_str.dart';
@@ -38,7 +40,7 @@ class RunTable {
           y1 = int.parse(stR[1]);
           x2 = int.parse(stR[3]);
           y2 = int.parse(stR[4]);
-          bl = false;
+          bl = !(x1 >= 0 && x1 <= 8 && x2 >= 0 && x2 <= 8 && y1 >= 0 && y1 <= 8 && y2 >= 0 && y2 <= 8);
         } catch (e) {
           print('Xato!');
         }
@@ -47,6 +49,10 @@ class RunTable {
         ChangeStr.change_str();
         ChangeMap.change_map();
         YebQoyish.yeb_qoyish();
+        bl = false;
+        bl1 = false;
+      } else if (yurishlar.lakirovkaQilsaBoladimi()) {
+        Lakirovka.lakirovka();
         bl = false;
         bl1 = false;
       } else {

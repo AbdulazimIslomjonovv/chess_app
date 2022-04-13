@@ -24,7 +24,6 @@ class ValidPosition {
         }
       case 'fil':
         {
-          print(Sakramasin.sakramasin(string: string));
           bl = yurishlar.fil() && Sakramasin.sakramasin(string: string);
           break;
         }
